@@ -1,16 +1,26 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+
 import './App.css';
+
+import HomePage from './pages/homepage/homepage.component';
+import Header from './components/header/header.component.jsx';
+import SignInAndSingUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component'
+const HatsPage = () => (
+  <div>
+    <h1>HATS PAGE </h1>
+  </div>
+);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Welcome to Little Tags. Website under construction!!!!!!
-        </p>
-      
-      </header>
+    <div>
+      <Header/>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/signin' component={SignInAndSingUpPage} />
+        </Switch>
+     
     </div>
   );
 }
